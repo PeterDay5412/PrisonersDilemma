@@ -8,8 +8,7 @@ import java.util.Random;
  */
 public class PrisionersDilemma
 {
-    //Writeing out instruction to display at game start hello
-    
+    //Writeing out instruction to display at game start 
     public static void instructions(){
         System.out.println("Welcome to Prisioner Dilemma!");
         System.out.println("Allow me to summerise the game and how it plays out!");
@@ -69,10 +68,12 @@ public class PrisionersDilemma
                          previousPlay=userPlay;
                          roundNumber++;
                     }
+                    //stop errors involoving incorrect input. Such as, mistakenly  typeing 3 instead of 2, or 1
                 } else {
                     System.out.println("please re write that, ");
                     
                 }
+                //stop errors involoving going over the character limit, IE out of bounds
             } else {
                 System.out.print("please re-write you're responce, ");
             }
@@ -91,6 +92,7 @@ public class PrisionersDilemma
     }
     //tit for tat, starting with defect
     public static void computerStrat1(){
+        //using a round counter so the CPU, can tell what to pick(what was used in the previous round)
         int roundCounter1=0;
         if (roundCounter1==0){
             
@@ -98,7 +100,11 @@ public class PrisionersDilemma
     }
     //tit for 2 tats, 2 defects starting
     public static void computerStrat2(){
-         
+        //using a round counter so the CPU, can tell what to pick(what was used in the 2nd previous round)
+        int roundCounter1=0;
+        if (roundCounter1==0){
+            
+        }        
     }
     public static void runCooperate(){
         
