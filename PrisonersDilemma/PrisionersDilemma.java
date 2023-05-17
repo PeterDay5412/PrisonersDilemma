@@ -8,7 +8,8 @@ import java.util.Random;
  */
 public class PrisionersDilemma
 {
-    //Writeing out instruction to display at game start
+    //Writeing out instruction to display at game start hello
+    
     public static void instructions(){
         System.out.println("Welcome to Prisioner Dilemma!");
         System.out.println("Allow me to summerise the game and how it plays out!");
