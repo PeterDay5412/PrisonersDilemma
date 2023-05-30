@@ -41,8 +41,7 @@ public class PrisionersDilemma
             if (userPlay.length()==1){
                 if (userPlay.charAt(0)=='1'){
                     System.out.println("cooperate");
-                    selectStrat();
-                    //runCooperate();
+                    cooperate();
                     //storing old input to be displayed at round end
                     if (roundNumber==0){
                          previousPlay = "First round";
@@ -56,8 +55,7 @@ public class PrisionersDilemma
                     }
                 } else if (userPlay.charAt(0)=='2'){
                     System.out.println("defect");
-                    selectStrat();                    
-                    //runDefect();
+                    defect();
                     if (roundNumber==0){
                          previousPlay = "First round";
                          System.out.println(previousPlay);
@@ -70,7 +68,7 @@ public class PrisionersDilemma
                     }
                     //stop errors involoving incorrect input. Such as, mistakenly  typeing 3 instead of 2, or 1
                 } else {
-                    System.out.println("please re write that, ");
+                    System.out.println("please re-write you're responce, ");
                     
                 }
                 //stop errors involoving going over the character limit, IE out of bounds
@@ -95,7 +93,7 @@ public class PrisionersDilemma
         //using a round counter so the CPU, can tell what to pick(what was used in the previous round)
         int roundCounter1=0;
         if (roundCounter1==0){
-            
+            defect();
         }        
     }
     //tit for 2 tats, 2 defects starting
@@ -103,13 +101,15 @@ public class PrisionersDilemma
         //using a round counter so the CPU, can tell what to pick(what was used in the 2nd previous round)
         int roundCounter1=0;
         if (roundCounter1==0){
-            
+            cooperate();
         }        
     }
-    public static void runCooperate(){
-        
+    //cooperate/defect opperations
+    public static void cooperate(){
+        boolean didRun = false;
     }
-    public static void runDefect(){
-        
-    } 
+    
+    public static void defect(){
+            
+    }
 }
