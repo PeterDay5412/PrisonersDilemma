@@ -1,13 +1,13 @@
 import java.util.Scanner;
 import java.util.Random;
-/**
+/** 
  * Write a description of class PrisionersDilemma here.
- *
+ *  
  * @author Peter Day
  * @version 04/05/23
- */
+ */ 
 public class PrisionersDilemma
-{
+{   
     //Writeing out instruction to display at game start hello
     public static void instructions(){
         System.out.println("Welcome to Prisioner Dilemma!");
@@ -18,8 +18,8 @@ public class PrisionersDilemma
         System.out.println("Defect, this means that you tell the police that you did nothing and it was all the other guy, this discredits the others story");
         System.out.println("lots, and can aid you very much. There will be 15 rounds, you will play aginst the computer, you're goal is to predict the computer's");
         System.out.println("Choices and minimise the amount of years you will serve! At the end of the 15 rounds the winner will be decided as the person who");
-        System.out.println("will end up serving the least years! At the start of each round you will be prompted witha text box below, type 1 to Defect and");
-        System.out.println("2 to cooperate! At the end of the round the results will be displayed of who siad what! Below I will give a tabel on how the years");
+        System.out.println("will end up serving the least years! At the start of each round you will be prompted witha text box below, type 2 to Defect and");
+        System.out.println("1 to cooperate! At the end of the round the results will be displayed of who siad what! Below I will give a tabel on how the years");
         System.out.println("are tallyed.");
         System.out.println("Cooperate + cooperate = 2 years each");
         System.out.println("Defect + defect = 5 years each");
@@ -39,7 +39,6 @@ public class PrisionersDilemma
         //select strat
         Random random = new Random();
         int strat = random.nextInt(2);
-        strat++;
         //cheacking for user input and running the cooperate/defect function
         while (roundGo==true){
             Scanner keyboard = new Scanner(System.in);
@@ -59,7 +58,9 @@ public class PrisionersDilemma
                         //PLAYERcooperateCPUdefect
                         playerYears=playerYears+5;
                         CPUyears=CPUyears+1;
-                        System.out.println("CPU has chosen defect");  
+                        System.out.println("CPU has chosen defect");
+                        System.out.println(playerYears);  
+                        System.out.println(CPUyears);  
                     } else{
                         if (strat==1){
                             if (CPUplay==userPlay){
@@ -70,7 +71,7 @@ public class PrisionersDilemma
                             } else{
                                 //PLAYERcooperateCPUdefect
                                 playerYears=playerYears+5;
-                                CPUyears=CPUyears+1;
+                                CPUyears=CPUyears+0;
                                 System.out.println("CPU has chosen defect");                                
                             }
                         } else{
@@ -101,11 +102,11 @@ public class PrisionersDilemma
                             //cheacking for double defect
                             if (CPUplay==userPlay){
                                 System.out.println("CPU has chosen defect");
-                                playerYears=playerYears+3;
-                                CPUyears=CPUyears+3;
+                                playerYears=playerYears+5;
+                                CPUyears=CPUyears+5;
                                 //doubledefect
                             } else{
-                                playerYears=playerYears+1;
+                                playerYears=playerYears+0;
                                 CPUyears=CPUyears+5;
                                 System.out.println("CPU has chosen cooperate");
                             }
@@ -118,6 +119,8 @@ public class PrisionersDilemma
                         System.out.println("Player scentace, "+playerYears);
                         //Continueing next round
                         roundNumber++;
+                        System.out.println(playerYears);  
+                        System.out.println(CPUyears);  
                     }
                 } else {
                     //Displaying if an unacceptable input is detected
@@ -129,12 +132,4 @@ public class PrisionersDilemma
             }
         }
     }
-
-    public static void runCooperate(){
-        
-    }
-
-    public static void runDefect(){
-
-    } 
-}
+}                                                                                                                                                                    
