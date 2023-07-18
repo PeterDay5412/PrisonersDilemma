@@ -32,16 +32,23 @@ public class PrisionersDilemma
         //initilise varibles
         int playerYears = 0;
         int CPUyears = 0;
+        //whether or not the loop wil run
         boolean roundGo = true;
+        //displaying game instuctions
         instructions();
+        //init previous play, fo tit for tat strat
         String previousPlay ="";
+        //The number of rounds the game has run
         int roundNumber=0;
         //select strat
         Random random = new Random();
+        //determining strat
         int strat = random.nextInt(2);
         //cheacking for user input and running the cooperate/defect function
         while (roundGo==true){
+            //setting up keyboard
             Scanner keyboard = new Scanner(System.in);
+            //setting the users option
             String userPlay = keyboard.nextLine();
             //making sure that user input is not <1
             if (userPlay.length()==1){
@@ -52,18 +59,21 @@ public class PrisionersDilemma
                     String CPUplay=previousPlay;
                     //if round = 0 the it will alwyas be defect-cooperate as the CPU always starts with defect
                     if (roundNumber==0){
-                        previousPlay = "First round";
+                        //prvious play equlas what the userplayed
                         previousPlay=userPlay;
+                        //increaseing round
                         roundNumber++;
                         //PLAYERcooperateCPUdefect
                         playerYears=playerYears+5;
                         CPUyears=CPUyears+1;
+                        //displaying the years gained to scentance and CPU option
                         System.out.println("CPU has chosen defect");
                         System.out.println(playerYears);  
-                        System.out.println(CPUyears);  
+                        System.out.println(CPUyears);
                     } else{
                         if (strat==1){
-                            if (CPUplay==userPlay){
+                            //Running the game
+                            if (userPlay==CPUplay){
                                 //doubleCooperate
                                 CPUyears=CPUyears+2;
                                 playerYears=playerYears+2;
@@ -74,10 +84,11 @@ public class PrisionersDilemma
                                 CPUyears=CPUyears+0;
                                 System.out.println("CPU has chosen defect");                                
                             }
+                            //if not the first strat then run
                         } else{
                             System.out.println("work in progress");
                         }
-                        //displaying talleyd years
+                        //displaying talleyd years and setting the previous play for next round
                         previousPlay=userPlay;
                         System.out.println("CPU scentace, "+CPUyears);
                         System.out.println("Player scentace, "+playerYears);
@@ -86,7 +97,7 @@ public class PrisionersDilemma
                     //if userplay is defect
                 } else if (userPlay.charAt(0)=='2'){
                     System.out.println("You have chosen to defect");
-                    //if round = 0 the it will alwyas be double defect as the CPU always starts with defect
+                    //if round = 0 then it will alwyas be double defect as the CPU always starts with defect
                     if (roundNumber==0){
                         previousPlay = "First round";
                         previousPlay=userPlay;
@@ -94,13 +105,15 @@ public class PrisionersDilemma
                         System.out.println("CPU has chosen defect");
                         playerYears=playerYears+3;
                         CPUyears=CPUyears+3;
+                        System.out.println(userPlay);
                     } else{
                         //tit for tat
                         if (strat==1){
                             //Decideing what the CPU will play
                             String CPUplay=previousPlay;
                             //cheacking for double defect
-                            if (CPUplay==userPlay){
+                            System.out.println(userPlay);
+                            if (CPUplay!=previousPlay){
                                 System.out.println("CPU has chosen defect");
                                 playerYears=playerYears+5;
                                 CPUyears=CPUyears+5;
