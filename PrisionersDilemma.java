@@ -65,34 +65,13 @@ public class PrisionersDilemma
                         roundNumber++;
                         //PLAYERcooperateCPUdefect
                         playerYears=playerYears+5;
-                        CPUyears=CPUyears+1;
+                        CPUyears=CPUyears+0;
                         //displaying the years gained to scentance and CPU option
                         System.out.println("CPU has chosen defect");
                         System.out.println(playerYears);  
                         System.out.println(CPUyears);
                     } else{
-                        if (strat==1){
-                            //Running the game
-                            if (userPlay==CPUplay){
-                                //doubleCooperate
-                                CPUyears=CPUyears+2;
-                                playerYears=playerYears+2;
-                                System.out.println("CPU has chosen cooperate");
-                            } else{
-                                //PLAYERcooperateCPUdefect
-                                playerYears=playerYears+5;
-                                CPUyears=CPUyears+0;
-                                System.out.println("CPU has chosen defect");                                
-                            }
-                            //if not the first strat then run
-                        } else{
-                            System.out.println("work in progress");
-                        }
-                        //displaying talleyd years and setting the previous play for next round
-                        previousPlay=userPlay;
-                        System.out.println("CPU scentace, "+CPUyears);
-                        System.out.println("Player scentace, "+playerYears);
-                        roundNumber++;
+            
                     }
                     //if userplay is defect
                 } else if (userPlay.charAt(0)=='2'){
@@ -103,37 +82,11 @@ public class PrisionersDilemma
                         previousPlay=userPlay;
                         roundNumber++;
                         System.out.println("CPU has chosen defect");
-                        playerYears=playerYears+3;
-                        CPUyears=CPUyears+3;
+                        playerYears=playerYears+2;
+                        CPUyears=CPUyears+2;
                         System.out.println(userPlay);
                     } else{
-                        //tit for tat
-                        if (strat==1){
-                            //Decideing what the CPU will play
-                            String CPUplay=previousPlay;
-                            //cheacking for double defect
-                            System.out.println(userPlay);
-                            if (CPUplay!=previousPlay){
-                                System.out.println("CPU has chosen defect");
-                                playerYears=playerYears+5;
-                                CPUyears=CPUyears+5;
-                                //doubledefect
-                            } else{
-                                playerYears=playerYears+0;
-                                CPUyears=CPUyears+5;
-                                System.out.println("CPU has chosen cooperate");
-                            }
-                        } else{
-                            System.out.println("work in progress, strat 2");
-                        }
-                        //displaying talleyd years
-                        previousPlay=userPlay;
-                        System.out.println("CPU scentace, "+CPUyears);
-                        System.out.println("Player scentace, "+playerYears);
-                        //Continueing next round
-                        roundNumber++;
-                        System.out.println(playerYears);  
-                        System.out.println(CPUyears);  
+                        
                     }
                 } else {
                     //Displaying if an unacceptable input is detected
