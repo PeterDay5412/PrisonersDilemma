@@ -1,3 +1,6 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
 import java.util.Scanner;
 import java.util.Random;
 /** 
@@ -9,6 +12,7 @@ import java.util.Random;
 public class PrisionersDilemma
 {   
     //Writeing out instruction to display at game start hello
+    
     public static void instructions(){
         System.out.println("Welcome to Prisioner Dilemma!");
         System.out.println("Allow me to summerise the game and how it plays out!");
@@ -20,7 +24,8 @@ public class PrisionersDilemma
         System.out.println("Choices and minimise the amount of years you will serve! At the end of the 15 rounds the winner will be decided as the person who");
         System.out.println("will end up serving the least years! At the start of each round you will be prompted witha text box below, type 2 to Defect and");
         System.out.println("1 to cooperate! At the end of the round the results will be displayed of who siad what! Below I will give a tabel on how the years");
-        System.out.println("are tallyed.");
+        System.out.println("are tallyed!");
+        System.out.println("Good luck!");
         System.out.println("Cooperate + cooperate = 2 years each");
         System.out.println("Defect + defect = 5 years each");
         System.out.println("Coopearte + defect = 5 for first 0 for second");
@@ -30,6 +35,7 @@ public class PrisionersDilemma
     //Checking for user input
     public static void run(){
         //initilise varibles
+        int gameLength = 15;
         int playerYears = 0;
         int CPUyears = 0;
         //whether or not the loop wil run
@@ -55,12 +61,8 @@ public class PrisionersDilemma
                 //makin sure user input is not >1
                 if (userPlay.charAt(0)=='1'){
                     System.out.println("You have chosen to cooperate");
-                    //storing old input to be displayed at round end
-                    String CPUplay=previousPlay;
                     //if round = 0 the it will alwyas be defect-cooperate as the CPU always starts with defect
                     if (roundNumber==0){
-                        //prvious play equlas what the userplayed
-                        previousPlay=userPlay;
                         //increaseing round
                         roundNumber++;
                         //PLAYERcooperateCPUdefect
@@ -70,21 +72,29 @@ public class PrisionersDilemma
                         System.out.println("CPU has chosen defect");
                         System.out.println(playerYears);  
                         System.out.println(CPUyears);
+                        //adding array
+                        String [] newArr = {userPlay};
+                        System.out.println(Arrays.toString(newArr));
                     } else{
-            
+                        cpuPlay = newArr[roundNumber-1];
                     }
                     //if userplay is defect
                 } else if (userPlay.charAt(0)=='2'){
                     System.out.println("You have chosen to defect");
                     //if round = 0 then it will alwyas be double defect as the CPU always starts with defect
                     if (roundNumber==0){
-                        previousPlay = "First round";
-                        previousPlay=userPlay;
+                        //increaseing round
                         roundNumber++;
-                        System.out.println("CPU has chosen defect");
+                        //PLAYERdefectCPUdefect
                         playerYears=playerYears+2;
                         CPUyears=CPUyears+2;
-                        System.out.println(userPlay);
+                        //displaying the years gained to scentance and CPU option
+                        System.out.println("CPU has chosen defect");
+                        System.out.println(playerYears);  
+                        System.out.println(CPUyears);
+                        //adding array
+                        String [] myArray = {userPlay};
+                        System.out.println(Arrays.toString(myArray));
                     } else{
                         
                     }
