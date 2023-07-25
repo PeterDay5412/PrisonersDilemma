@@ -35,9 +35,10 @@ public class PrisionersDilemma
     //Checking for user input
     public static void run(){
         //initilise varibles
-        int gameLength = 15;
+        String gameLength = "15";
         int playerYears = 0;
         int CPUyears = 0;
+        String cPUPlay = "";
         //whether or not the loop wil run
         boolean roundGo = true;
         //displaying game instuctions
@@ -47,6 +48,7 @@ public class PrisionersDilemma
         //The number of rounds the game has run
         int roundNumber=0;
         //select strat
+        
         Random random = new Random();
         //determining strat
         int strat = random.nextInt(2);
@@ -59,6 +61,7 @@ public class PrisionersDilemma
             //making sure that user input is not <1
             if (userPlay.length()==1){
                 //makin sure user input is not >1
+                String [] myArr = {};
                 if (userPlay.charAt(0)=='1'){
                     System.out.println("You have chosen to cooperate");
                     //if round = 0 the it will alwyas be defect-cooperate as the CPU always starts with defect
@@ -73,10 +76,11 @@ public class PrisionersDilemma
                         System.out.println(playerYears);  
                         System.out.println(CPUyears);
                         //adding array
-                        String [] newArr = {userPlay};
-                        System.out.println(Arrays.toString(newArr));
+                        System.out.println(Arrays.toString(myArr));
                     } else{
-                        cpuPlay = newArr[roundNumber-1];
+                        cPUPlay = myArr[roundNumber-1];
+                        System.out.println(cPUPlay);
+                        roundNumber++;
                     }
                     //if userplay is defect
                 } else if (userPlay.charAt(0)=='2'){
@@ -93,10 +97,11 @@ public class PrisionersDilemma
                         System.out.println(playerYears);  
                         System.out.println(CPUyears);
                         //adding array
-                        String [] myArray = {userPlay};
-                        System.out.println(Arrays.toString(myArray));
+                        System.out.println(Arrays.toString(myArr));
                     } else{
-                        
+                        cPUPlay = myArr[roundNumber-1];
+                        System.out.println(cPUPlay);
+                        roundNumber++;
                     }
                 } else {
                     //Displaying if an unacceptable input is detected
