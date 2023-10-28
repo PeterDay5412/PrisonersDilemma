@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DefectMirrorGame
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DefectMirrorGame\ here.\r\n\r\n\ @author\ Peter\ Day\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=DefectMirrorGame()
+comment2.params=
+comment2.target=java.lang.String\ strategy()
+comment3.params=choice
+comment3.target=Choice\ play(Choice)
+numComments=4
